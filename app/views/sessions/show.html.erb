@@ -1,0 +1,9 @@
+<% if @user.present? %>
+  Logged in as <%= @user.name %>. <br>
+  UID: <%= @user.uid %> <br>
+  Email: <%= @user.email %> <br>
+  <%= link_to "Logout", :session, method: :delete %>
+<% else %>
+  Logged out. <br>
+  <%= link_to "Login", "/auth/paypal" %>
+<% end %>
